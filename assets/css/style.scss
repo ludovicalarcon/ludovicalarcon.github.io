@@ -64,6 +64,39 @@ section .heading
     float: none;
 }
 
+@media only screen and (max-width : 750px)
+{
+    .container-fluid
+    {
+        padding: 0;
+    }
+
+    section
+    {
+        padding: 0;
+    }
+
+    #about .heading h1
+    {
+        font-size: 30px;
+    }
+
+    #name-size
+    {
+        font-size: 60px !important;
+    }
+
+    #about .heading h3
+    {
+        font-size: 25px;
+    }
+
+    .profile-picture
+    {
+        padding: 0;
+    }
+}
+
 #about .heading h1
 {
     color: #FFFFFF;
