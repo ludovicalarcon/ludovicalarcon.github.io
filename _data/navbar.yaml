@@ -1,0 +1,9 @@
+- name: Home
+  link: /
+  target: _self
+- name: Categories
+  link: /categories
+  target: _self
+- name: Github
+  link: https://github.com/alarco-l
+  target: _blank

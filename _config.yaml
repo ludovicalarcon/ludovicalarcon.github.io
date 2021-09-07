@@ -1,0 +1,22 @@
+permalink: ':title/'
+
+logo-path: "/assets/images/logo1.png"
+baseurl: ""
+
+author: "Ludovic Alarcon"
+
+sass:
+  sass_dir: assets/css
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class : 'syntax'
+plugins:
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page/:num"
