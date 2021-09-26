@@ -10,3 +10,5 @@ end
 gem "rouge", "~> 3.26"
 
 gem "kramdown", "~> 2.3"
+
+gem "webrick", "~> 1.7"
