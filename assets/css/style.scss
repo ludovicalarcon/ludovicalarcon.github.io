@@ -3,12 +3,6 @@
 
 @import 'bootstrap/bootstrap';
 
-*,
-*::before,
-*::after {
-  box-sizing: unset;
-}
-
 body
 {
     font-family: "Lato", Helvetica, sans-serif;
@@ -348,6 +342,18 @@ nav #name-size-nav
   @media only screen and (max-width : 850px) {
       .post-thumbnail {
        display: none;
+      }
+      .card-post-title {
+          font-size: 42px !important;
+      }
+      h1 {
+          font-size: 32px;
+      }
+      h2 {
+          font-size: 27px;
+      }
+      h4 {
+          font-size: 20px;
       }
   }
   
