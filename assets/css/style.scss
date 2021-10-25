@@ -519,6 +519,14 @@ p img
     width: 100%;
 }
 
+h1 img
+{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 blockquote
 {
     position: relative;
@@ -539,7 +547,7 @@ font-family: Calibri;
 
 code
 {
-    font-size: 100%;
+    font-size: 105%;
     color: #3498db;
     font-weight: bold;
 }
