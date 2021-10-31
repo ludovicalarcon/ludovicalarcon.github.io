@@ -527,6 +527,13 @@ h1 img
     margin-right: auto;
 }
 
+@media only screen and (max-width : 650px) {
+    h3 img
+    {
+        width: 100%;
+    }
+}
+
 blockquote
 {
     position: relative;
