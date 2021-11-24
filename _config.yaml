@@ -3,7 +3,19 @@ permalink: ':title/'
 logo-path: "/assets/images/logo1.png"
 baseurl: ""
 
-author: "Ludovic Alarcon"
+author:
+  name: "Ludovic Alarcon"
+  twitter: alarco_l
+  image: me.jpg
+twitter:
+  username: alarco_l
+  card: summary_large_image
+social:
+  name: "Ludovic Alarcon"
+  links:
+    - https://twitter.com/alarco_l
+    - https://www.linkedin.com/in/ludovic-alarcon
+    - https://github.com/ludovicalarcon
 
 sass:
   sass_dir: assets/css
@@ -17,6 +29,8 @@ kramdown:
     css_class : 'syntax'
 plugins:
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 paginate: 10
 paginate_path: "/page/:num"
