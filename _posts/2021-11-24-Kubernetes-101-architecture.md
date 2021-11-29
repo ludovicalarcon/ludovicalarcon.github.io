@@ -8,9 +8,10 @@ tags: [kubernetes, "101"]
 ## ![](/assets/images/k8s.png)
 <br>
 
-In this Kubernetes 101 series, we will walk through what is Kubernetes and its architecture. A future article will cover the basis of the core components and concepts.
+In this Kubernetes 101 series, we will walk through what is Kubernetes and its architecture. The next article will cover the basis of the Kubernetes objects and concepts.
 
-- Part 1: Kubernetes 101 - Architecture
+- Part 1: Kubernetes 101 - Architecture (this article)
+- [Part 2: Kubernetes 101 - Objects]({% post_url 2021-11-29-Kubernetes-101-objects %})
 
 ## __What is Kubernetes ?__
 
