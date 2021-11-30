@@ -212,3 +212,24 @@ Basically an `Ingress` exposes HTTP and HTTPS routes from outside the cluster to
 Generally Ingress requires to have an `Ingress Controller` installed such as [Nginx](https://kubernetes.github.io/ingress-nginx/) or [Traefik](https://doc.traefik.io/traefik/user-guides/crd-acme/).  
 
 ![](/assets/images/2021-11-29-ingress.png)
+
+### __Ingress definition__
+
+A simple Ingress definition looks like:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /somePath
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+```
