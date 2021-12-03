@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <link rel="preconnect" as="script"
-        href="https://www.googletagmanager.com/gtag/js?id=G-VWRYR70WGD">
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWRYR70WGD"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VWRYR70WGD');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VWRYR70WGD');
     </script>
 
     <title>{{ site.author.name }} - {{ page.title }}</title>
