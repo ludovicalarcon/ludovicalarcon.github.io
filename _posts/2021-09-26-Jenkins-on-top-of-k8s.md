@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jenkins in top of a kubernetes cluster
+title: Jenkins on top of a kubernetes cluster
 img: jenkins-x.png
 tags: [kubernetes, jenkins]
 ---
