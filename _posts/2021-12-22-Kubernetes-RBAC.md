@@ -68,7 +68,9 @@ For a `ClusterRole`, you just need to use the kind `ClusterRole` and omit the na
 
 `RoleBind` and `ClusterRoleBindind` are the objects used to link the set of permissions defined in a `Role` or `ClusterRole` to `subjects` (user, group or service account).
 Both holds a list of subjects and a reference to the role being granted.  
+
 `RoleBinding` is used to grant permission within a specific namespace whereas `ClusterRoleBindings` grant that access to all the namespaces.  
+
 A `RoleBinding` should refer to a `Role` in the same namespace but also refers to a `ClusterRole` and bind it to the namespace of the RoleBinding.
 
 RoleBinding from the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-example) that grand the _pod-reader_ role defined previously to the user _Jane_ in the _default_ namespace.
@@ -91,7 +93,6 @@ roleRef:
 
 For a `ClusterRoleBinding`, you need to use the kind `ClusterRoleBinding`, omit the namespace and use `ClusterRole` as reference.
 
-<br>
 
 The main idea behind RBAC is to provide access to resources for subjects who require it.  
 Always keep in mind the `least privilege principle`.
