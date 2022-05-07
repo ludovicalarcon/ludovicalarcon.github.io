@@ -16,6 +16,7 @@ social:
     - https://twitter.com/alarco_l
     - https://www.linkedin.com/in/ludovic-alarcon
     - https://github.com/ludovicalarcon
+description: Ludovic Alarcon Blog about Kubernetes and cloud stuff
 
 sass:
   sass_dir: assets/css
@@ -31,6 +32,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
 
 paginate: 10
 paginate_path: "/page/:num"
