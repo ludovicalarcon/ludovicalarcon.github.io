@@ -17,7 +17,7 @@ According to official [documentation](https://docs.microsoft.com/en-us/azure/gov
  It took me several attempts and documentation reading before I could get what I wanted.
  ```
  Resources
- | where type == "microsoft.contaunerservice/managedclusters"
+ | where type == "microsoft.containerservice/managedclusters"
  | extend properties.agentPoolProfiles
  | project subscriptionId, name, nodePool = properties.agentPoolProfiles
  | mv-expand nodePool
