@@ -11,9 +11,12 @@ In my day-to-day work, I help and support teams to shift on containers and cloud
 One of the reasons of Kubernetes complexity is because troubleshooting what went wrong can by difficult if you don't know where to look and you need to often look in more than one place.  
 I hope this series of blog posts about troubleshooting Kubernetes will help people in their journey.
 
+- __Troubleshooting Kubernetes: ImagePullBackOff__
+- [Troubleshooting Kubernetes: Pods in Pending State]({% post_url 2022-05-21-Troubleshooting-Pending-Pods %})
+
 ## __Troubleshooting ImagePullBackOff Error__
 
-You deployed your deployment (statefulset or other) and the underlying pod(s) is in `ImagePullBackOff` state.
+You deployed your deployment (statefulset or other) and the underlying pod(s) is in `ImagePullBackOff` state.  
 There can be 3 reasons for that:
 - The `tag` does not exist
 - The `image` does not exist
