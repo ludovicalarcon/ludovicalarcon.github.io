@@ -12,7 +12,7 @@ One of the reasons of Kubernetes complexity is because troubleshooting what went
 I hope this series of blog posts about troubleshooting Kubernetes will help people in their journey.
 
 - __Troubleshooting Kubernetes: ImagePullBackOff__
-- [Troubleshooting Kubernetes: Pods in Pending State]({% post_url 2022-05-21-Troubleshooting-Pending-Pods %})
+- [Troubleshooting Kubernetes: Pods in Pending State]({% post_url 2022-05-22-Troubleshooting-Pending-Pods %})
 
 ## __Troubleshooting ImagePullBackOff Error__
 
