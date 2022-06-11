@@ -2,7 +2,7 @@
 layout: post
 title: "Troubleshooting Kubernetes: Pods in Pending State"
 img: k8s-troubleshooting.png
-tags: [Kubernetes, Throubleshooting, "101"]
+tags: [kubernetes, throubleshooting, "101"]
 ---
 
 ## __Introduction__
