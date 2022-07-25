@@ -14,6 +14,7 @@ I hope this series of blog posts about troubleshooting Kubernetes will help peop
 - [Troubleshooting Kubernetes: ImagePullBackOff]({% post_url 2022-05-21-Troubleshooting-ImagePullBackOff %})
 - __Troubleshooting Kubernetes: Pods in Pending State__
 - [Troubleshooting Kubernetes: CrashLoopBackOff]({% post_url 2022-05-26-Troubleshooting-CrashLoopBackOff %})
+- [Troubleshooting Kubernetes: Ingress Traffic Flows]({% post_url 2022-07-25-Troubleshooting-Ingress-Traffic-Flows %})
 
 ## __Troubleshooting Pods in Pending State__
 
