@@ -7,7 +7,7 @@ tags: [kubernetes, containerd]
 
 # __Setup a local kubernetes cluster with Kubeadm__
 
-In this post, we will see how to setup a local kubernetes 1.23 cluster bootstrapped using `Kubeadm`.  
+In this post, we will see how to setup a local kubernetes 1.24 cluster bootstrapped using `Kubeadm`.  
 The setup will be the following:
 - [Containerd](https://github.com/containerd/containerd) as the Container Runtime Interface (CRI)
 - [Calico](https://projectcalico.docs.tigera.io/about/about-calico) as the Container Network Interface (CNI)
@@ -15,8 +15,8 @@ The setup will be the following:
 ### __Prerequisites__
 
 Create 3 Virtual Machines:
-- 1 control plane node: Ubuntu 20.04, 2 CPU and 4096 MB RAM
-- 2 worker nodes: Ubuntu 20.04, 2 CPU and 2048 MB RAM
+- 1 control plane node: Ubuntu 22.04, 2 CPU and 4096 MB RAM
+- 2 worker nodes: Ubuntu 22.04, 2 CPU and 2048 MB RAM
 
 ## __The Why__
 
@@ -67,13 +67,27 @@ sudo sysctl --system
 Now, let's setup `Containerd`
 
 ```sh
-# Get containerd
-wget -q https://github.com/containerd/containerd/releases/download/v1.5.8/cri-containerd-cni-1.5.8-linux-amd64.tar.gz
-wget -q https://github.com/containerd/containerd/releases/download/v1.5.8/cri-containerd-cni-1.5.8-linux-amd64.tar.gz.sha256sum
-sha256sum --check cri-containerd-cni-1.5.8-linux-amd64.tar.gz.sha256sum
+# Install containerd as a service
+curl -LO https://github.com/containerd/containerd/releases/download/v1.6.6/containerd-1.6.6-linux-amd64.tar.gz
+sudo tar Cxzvf /usr/local containerd-1.6.6-linux-amd64.tar.gz
+curl -LO https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+sudo cp containerd.service /lib/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now containerd
 
-# Install containerd
-sudo tar --no-overwrite-dir -C / -xzf cri-containerd-cni-1.5.8-linux-amd64.tar.gz
+curl -LO https://github.com/opencontainers/runc/releases/download/v1.1.3/runc.amd64
+sudo install -m 755 runc.amd64 /usr/local/sbin/runc
+curl -LO https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
+sudo mkdir -p /opt/cni/bin
+sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
+
+# Create containerd configuration
+sudo mkdir -p /etc/containerd
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+
+# Enable Cgroup
+sudo sed -i 's/            SystemdCgroup = false/            SystemdCgroup = true/' /etc/containerd/config.toml
+sudo systemctl restart containerd
 
 # Systemd drop-in for containerd
 cat <<EOF | sudo tee /etc/systemd/system/kubelet.service.d/0-containerd.conf
@@ -90,10 +104,10 @@ Finally, let's install `Kubeadm`, `Kubelet` and `Kubectl`
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt-get install -y kubelet=1.23.1-00 \
-                        kubeadm=1.23.1-00 \
-                        kubectl=1.23.1-00
-sudo apt-mark hold kubelet=1.23.1-00 kubeadm=1.23.1-00 kubectl=1.23.1-00
+sudo apt-get install -y kubelet=1.24.2-00 \
+                        kubeadm=1.24.2-00 \
+                        kubectl=1.24.2-00
+sudo apt-mark hold kubelet=1.24.2-00 kubeadm=1.24.2-00 kubectl=1.24.2-00
 ```
 
 ## __Step 2: Setup the control plane node__
