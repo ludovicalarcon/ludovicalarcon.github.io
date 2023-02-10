@@ -10,7 +10,7 @@ It handles service-to-service communication by routing all inter-service communi
 I hope this series of blog posts will help people in their service mesh journey.
 
 - __What is a Service Mesh ?__
-- Istio (Incoming)
+- [Istio]({% post_url 2023-02-10-Istio %})
 
 ## Key features
 
