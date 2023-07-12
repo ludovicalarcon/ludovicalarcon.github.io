@@ -410,4 +410,7 @@ After few minutes, your LB will be ready.
 We now have a Kubernetes cluster ready on the free tier of Oracle Cloud.  
 It's a nice playground for testing everything Kubernetes related.  
 
+Related articles:
+- [Access your kubernetes cluster from your local machine with tailscale]({% post_url 2023-07-12-Tailscale %})
+
 I hope this was useful!

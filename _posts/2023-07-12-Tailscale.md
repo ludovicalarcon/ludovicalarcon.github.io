@@ -52,10 +52,12 @@ tailscale ip -4
 ```
 We will create a `KubeConfig` file on our machine and put the content inside and replace the line `server: https://10.0.0.X:6443` with the IP address previously retrieved.
 ```sh
-# on the local machine
+# On the local machine
 mkdir -p ~/.kube
 # Put content retrieve on the control plane
 vi ~/.kube/oracle-config
+# Use the kubeconfig
+export KUBECONFIG=~/.kube/oracle-config
 ```
 If we try to interact with our cluster from our local machine, we will now have an error on the certificate.
 ```
