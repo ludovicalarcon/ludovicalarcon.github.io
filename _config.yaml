@@ -1,4 +1,4 @@
-permalink: ':title/'
+permalink: ":title/"
 
 logo-path: "/assets/images/logo1.png"
 baseurl: ""
@@ -6,7 +6,7 @@ baseurl: ""
 author:
   name: "Ludovic Alarcon"
   twitter: alarco_l
-  image: me.jpg
+  image: me.png
 twitter:
   username: alarco_l
   card: summary_large_image
@@ -27,7 +27,7 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     default_lang: html
-    css_class : 'syntax'
+    css_class: "syntax"
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
@@ -36,3 +36,4 @@ plugins:
 
 paginate: 10
 paginate_path: "/page/:num"
+
